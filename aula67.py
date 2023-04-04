@@ -25,8 +25,6 @@ Refatorar: Significa editar o seu código.
 
 
 
-
-
 # Toda vez que eu enviar um parâmetro que tem um valor padrão, todos os outros que vierem após, precisam ter um valor padrão também
 def soma(x,y,z=None):                                                          # 'z' terá o valor padrão 'None' | None por padrão é 'false'
     if z is not None:                                                          # Se 'z' não for 'None' | 'None' = nenhum, 
