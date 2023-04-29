@@ -49,19 +49,21 @@ Mutável: dict, list
 #     'Idade': 26,
 #     'Altura': 1.82,
 #     'Endereços': [
-#         {'rua': 'tal tal', 'numero': '123'},
+#         {'rua': 'tal tal', 'numero': '123'},                            # Dentro da lista tem outros dicionários 
 #         {'rua': 'outra rua', 'numero': '321'},
 #     ],
 # }
 
 
 # print(pessoa, type(pessoa))
-# print(pessoa['Sobrenome'])                                                      # Especificando qual dado exibir
+# print(pessoa['Sobrenome'])                                            # Especificando qual dado exibir
 
 # print()
 
-# for chave in pessoa:
-#     print(chave,':', pessoa[chave])                                             # Pegando dinamicamente a chave
+# for chave in pessoa:                                                    # 'chave' é o iterador que percorre cada uma das chaves do dict
+#     print(chave,':', pessoa[chave])                                     # pessoa[chave] pega o valor atual dentro da chave| PEGANDO DINÂMICAMENTE A CHAVE
+
+# Dessa forma, estamos acessando o 'índice' que ao invés de ser número, é uma string, fica mais fácil de saber o que estou acessando.
 
 
 
@@ -78,25 +80,34 @@ Mutável: dict, list
 ## código ##
 ## código ##
 
+
+# pessoa['nome'] = 'Luiz Otávio'                                          # Criando a chave de forma manual
+
 # chave = 'nome'                                                            # Criando a variável que vai se tornar a chave dinâmica
 
-# pessoa[chave]='José Manoel'                                               # Criando chave dinâmica
-# pessoa['sobrenome']='Martins'
+# pessoa[chave]='Fernando'                                                  # Criando chave dinâmica
+# pessoa['sobrenome']='Martins'                                             # Definindo 'sobrenome'
+# print(pessoa[chave])                                                      # Exibindo a chave 'nome'
+# print()
 
 
-# print(pessoa[chave])                                                      # Exibindo a chave
-
-# pessoa[chave]='Maria'                                                     # Alterando valor da chave
-
+# pessoa[chave]='Maria'                                                     # Alterando valor da chave 'nome' dinâmicamente
 # print(pessoa)
-# del pessoa['sobrenome']                                                   # Apagando a chave 'sobrenome'
-# print(pessoa['nome'])
 
-# if pessoa.get('sobrenome') is None:                                       # '.get()' é um método que tem dentro de dicionário, por padrão ele retorna 'None' se a chave não existir
+
+# print()
+# del pessoa['sobrenome']                                                   # Apagando a chave 'sobrenome'
+# print(pessoa)
+# print()
+
+# if pessoa.get('sobrenome') is None:                                       # Por padrão ele retorna 'None' se a chave não existir
 #     print('Não Existe')
 # else:
 #     print('Existe')
 
+# O método .get() é usado para acessar um valor em um dicionário. Ele recebe dois parâmetros: a chave que você deseja acessar e um valor padrão que será retornado caso 
+# A chave não exista no dicionário.         Ex: valor = dicionario.get('chave1', 'valor_padrao')
+# Se não for específicado um valor padrão caso a chave não exista, é retornado None
 
 
 
@@ -125,9 +136,9 @@ setdefault  -   Adiciona valor se a chave não existe
 
 # print(len(jogador))                                                # Retorna a quantidade de chaves que tenho no dicionário
 # print(jogador.keys())                                              # Retorna as chaves 'dict_keys'
-# print(jogador.values())                                            # Retorna os valores 'dict_values'
+# print(list(jogador.values()))                                      # Retorna os valores 'dict_values' | Também podemos converter para usar como lista 
 # print(jogador.items())                                             # Retorna as chaves e os valores 'dict_items'
-# print(jogador.setdefault('Idade',34))                              # Define um valor padrão para uma chave que ainda não existe
+# print(jogador.setdefault('Idade',35))                              # Define um valor padrão para uma chave que ainda não existe
 # print()
 # print('Isso é uma tupla ',tuple(jogador.keys()))                   # Podemos converter para tupla ou list
 # print()
@@ -200,19 +211,19 @@ Por padrão o '.copy()' faz uma cópia rasa (shallow copy).    Exemplo:
 """
 
 
-# dicionario1 = {                                                          # Criando um novo dicionário
+# dicionario1 = {                                                         # Criando um novo dicionário
 #     'c1':1,
 #     'c2':2,
 #     'lista':[0,2,4,6],
 # }
 
-# dicionario2 = dicionario1.copy()                                         # Fazendo shallow copy (cópia rasa) | shallow copy copia tudo que é imutável
+# dicionario2 = dicionario1.copy()                                        # Fazendo shallow copy (cópia rasa) | shallow copy copia tudo que é imutável
 
-# dicionario2['c1'] = 7                                                    # Alterando o 'dicionario02'
-# dicionario2['lista'][1] = 99                                             # Alterando uma 'list' ou 'dict' com .copy(), esse trecho do código apenas faz referência, não copia em si 
-
+# dicionario2['c1'] = 7                                                   # Alterando o 'dicionario02'
+# dicionario2['lista'][1] = 99                                            # Alterando uma 'list' ou 'dict' com .copy(), vai alterar o 'dicionario1' e 'dicionario2'
+#                                                                         # Porque 'list' e 'dict' é mutável, esse trecho do código apenas faz referência, não copia em si 
 # print(f'Este é o dicionário 01 {dicionario1}')
-# print(f'Este é o dicionário 02 {dicionario2}')                           # Desta forma o 'dicionario02' é alterado e o 'dicionario01' não.
+# print(f'Este é o dicionário 02 {dicionario2}')                          # Desta forma o 'dicionario02' é alterado e o 'dicionario01' não, mas dentro da lista, os dois são alterados
 
 
 
@@ -238,10 +249,11 @@ objetos aninhados dentro deles.
 #     'lista':[0,2,4,6],
 # }
 
-# dicionario2 = copy.deepcopy(dicionario1)                                 # Usando 'copy.deepcopy' cópia profunda
+# dicionario2 = copy.deepcopy(dicionario1)                                 # Usando 'copy.deepcopy()' cópia profunda
 
 # dicionario2['c1'] = 7                                                    # Alterando 'dicionário02'
 # dicionario2['lista'][1] = 99                                             # Alterando 'list' no 'dicionário02' (Mutável)
+# # Desta forma um dicionário já não afeta mais o outro.
 
 # print(f'Este é o dicionário 01 {dicionario1}')
 # print(f'Este é o dicionário 02 {dicionario2}')

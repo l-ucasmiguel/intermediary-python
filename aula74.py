@@ -18,17 +18,13 @@ falar_boa_tarde = criar_saudacao('Boa tarde')
 falar_boa_noite = criar_saudacao('Boa noite')
 
 
-print(falar_bom_dia('Maria'))                                      # Usando os '()' agora é executada a função
-print(falar_boa_tarde('Jorge'))                                    # Porque ao invés de dar print somente na variável 'falar_boa_tarde'
-print(falar_boa_noite('Roben'))                                    # Usamos o '()' para chamar o valor 
+print(falar_bom_dia('Maria'))                                       # Usando os '()' agora é executada a função
+print(falar_boa_tarde('Jorge'))                                     # Porque ao invés de dar print somente na variável 'falar_boa_tarde'
+print(falar_boa_noite('Roben'))                                     # Usamos o '()' para chamar o valor 
 
 
 print('-'*40)
-for nome in ['Fenan','Juan','Cristiano']:                        #
+for nome in ['Fenan','Juan','Cristiano']:
     print(falar_bom_dia(nome))
     print(falar_boa_tarde(nome))
     print(falar_boa_noite(nome))
-
-
-
-
