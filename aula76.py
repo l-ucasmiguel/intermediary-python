@@ -81,7 +81,7 @@ Mutável: dict, list
 ## código ##
 
 
-# pessoa['nome'] = 'Luiz Otávio'                                          # Criando a chave de forma manual
+# pessoa['nome'] = 'Luiz Otávio'                                            # Criando a chave de forma manual
 
 # chave = 'nome'                                                            # Criando a variável que vai se tornar a chave dinâmica
 
@@ -275,6 +275,7 @@ pop         -   Apaga um item com a chave especificada (del)
 popitem     -   Apaga o último item adicionado
 update      -   Atualiza um dicionário com outro
 """
+
 
 
 

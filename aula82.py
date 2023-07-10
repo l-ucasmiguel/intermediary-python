@@ -1,33 +1,40 @@
-def executa(funcao, *args):                                  # É uma função que executa outras funções
+def executa_funcao(funcao, *args):                                   # É uma função que executa outras funções
     return funcao(*args)
 
-
-def soma(x,y):                                               # Função que soma dois valores
+def soma(x,y):                                                       # Função que soma dois valores
     return x+y
 
 
+
 print(
-    executa(lambda x,y: x+y , 2,3),                          # lambda = def      x,y: é a expressão/return      'x+y' é a expressão      '2,3' são os argumentos
+    executa_funcao(lambda x,y: x+y , 19,1),                          # lambda = def   'x,y' são os argumentos da lambda   'x+y' é a expressão   '2,3' são os argumentos p/ expressão
 
-    executa(soma,2,3),                                       # A função 'executa' está executando a função 'soma', os agumentos estão entrando no '*args'
+    executa_funcao(soma,29,1),                                       # A função 'executa_funcao' está executando a função 'soma', os agumentos estão entrando no '*args'
 
-    soma(2,3)                                                # Chamando a função 'soma'
+    soma(39,1)                                                       # Chamando a função 'soma'
 )
 
 
 
-# def cria_multiplicador(multiplicador):
-#     def multiplica(numero):
-#         return numero * multiplicador
-#     return multiplica
+def cria_multiplicador(multiplicador):
+    def multiplica(numero):
+        return numero * multiplicador
+    return multiplica
 
-duplica = executa(lambda m: lambda n: n*m, 4)
-print(duplica(4))
+vezes = cria_multiplicador(50)                                   # Estou atribuindo a função 'cria_multiplicador' passando '50' como parâmetro para a variável 'vezes' sem executar
+print(vezes(2))                                                  # Aqui a função é executada e o retorno é impresso na tela. 
+
+
+# duplica = executa_funcao(lambda m: lambda n: n*m, 7)           # Não é indicado usar assim, porque não dá pra ler muito bem 
+# print(duplica(9))
+
+
+
 
 
 print(
-    executa(
-        lambda *args: sum(args),                             # Somando todos '*args' via lambda
+    executa_funcao(
+        lambda *args: sum(args),                                 # Somando todos '*args' via lambda
         1,2,3,4,5,6,7
     )
 )

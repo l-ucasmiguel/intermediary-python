@@ -1,4 +1,4 @@
-# Empacotamento e desempacotamento de dicinánrios
+# Empacotamento e desempacotamento de dicionários
 
 """
 No código abaixo, primeiro são definidas duas variáveis 'a' e 'b', que recebem os valores '1' e '2', respectivamente.
@@ -8,40 +8,41 @@ de volta em 'a' e 'b', trocando assim seus valores. após a execução dessa exp
 'b' passa a ter o valor '1'. Por fim, a função 'print' é usada para exibir os valores de 'a' e 'b', resultando em '2' '1' sendo impresso no
 console."""
 
-# a,b = 1,2                                                # 'a' e 'b' recebem os valores '1' e '2' respectivamente. 
-# a,b = b,a                                                # 'a' vai receber o valor de 'b', no caso '2', e 'b' recebe o valor de 'a' no caso '1'
+
+# # EXEMPLO:
+# a,b = 1,2                                                                  # 'a' e 'b' recebem os valores '1' e '2' respectivamente. 
+# a,b = b,a                                                                  # 'a' vai receber o valor de 'b', no caso '2', e 'b' recebe o valor de 'a' no caso '1'
 # print(a,b)
 
 
 
 
-# pessoa = {                                               # Dict
+
+# # EXEMPLO PRÁTICO 01
+# pessoa = {                                                                 # Dict
 #     'nome':'Alice',
 #     'sobrenome':'Souza'
 # }
 
 
-# a,b  = pessoa.values()                                   # Usando o método 'values' para pegar os valores, quando não é passado um método, é passado somente as chaves
-# print(a,b)
+# a,b  = pessoa.values()                                                     # Neste caso usando 'pessoa.values()', 'a' recebe a chave 'nome' e 'b' recebe a chave 'sobrenome'
+# print(a,b,'\n')
 
-# print()
-# print('-'*100)
-# print()
 
-# (a1,a2), (b1,b2) = pessoa.items()                        # Desempacotamento interno
+# (a1,a2), (b1,b2) = pessoa.items()                                          # Desempacotamento internamente
 # print(a1,a2)
-# print(b1,b2)
+# print(b1,b2,'\n')
 
-# print()
-# print('-'*100)
-# print()
 
-# for chave, valor in pessoa.items():                      # Mesma coisa utilizando 'for'
+# for chave, valor in pessoa.items():                                        # Mesma coisa utilizando 'for'
 #     print(chave, valor)
 
 
 
 
+
+# EXEMPLO PRÁTICO 02
+# Criando dicionário
 pessoa = {
     'nome':'Alice',
     'sobrenome':'Souza'
@@ -52,23 +53,36 @@ dados_pessoa = {
     'altura':1.6,
 }
 
+
+
+# """
+# args e kargs:
+#     *args     - argumentos não nomeados
+#     **kwars   - argumentos nomeados, 'kwargs' keyword arguments
+# """
+
+
+
 # Desempacotamento de um dicionário
-pessoa_completa = {**pessoa,**dados_pessoa}                # Para extrair dados de um dicinário utilizamos '**'
+pessoa_completa = {**pessoa,**dados_pessoa}                               # Para extrair dados de um dicionário utilizamos '**'
 # print(pessoa_completa)
+print()
 
-# args e kargs
-# *args     - argumentos não nomeados
-# **kwars   - argumentos nomeados, 'kwargs' keyword arguments 
 
-def mostro_argumentos_nomeados(*args, **kwargs):                    # Empacotando os argumentos
-    print('NÃO NOMEADOS:', args)
+
+# Função que mostra o que são os argumentos nomeados e não nomeados
+def mostro_argumentos_nomeados(*args, **kwargs):                          # Empacotando os argumentos
+    print('NÃO NOMEADOS:', args)                                          # Se eu mandar algum argumento não nomeado, ele vem aqui em 'args'
 
     for chave, valor in kwargs.items():
-        print(chave,valor)                                          # Argumento nomeado KWARGS
+        print(chave,valor)                                                # Argumento nomeado 'kwargs' é aqui
 
 
-# mostro_argumentos_nomeados(1,2, nome='Joana',qualquer='teste')
-# mostro_argumentos_nomeados(**pessoa_completa)                     # Desempacotando uma chamada de função
+
+mostro_argumentos_nomeados(1,2, nome='Joana',idade=29)
+print()
+mostro_argumentos_nomeados(**pessoa_completa)                             # Desempacotando uma chamada de função
+print()
 
 
 configs = {
@@ -78,4 +92,4 @@ configs = {
     'arg4':4,
 }
 
-mostro_argumentos_nomeados(**configs)
+mostro_argumentos_nomeados(15, 20, **configs)
