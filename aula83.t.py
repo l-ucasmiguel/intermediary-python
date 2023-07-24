@@ -1,18 +1,19 @@
 # Praticando aula 83
+# Empacotamento e desempacotamento de dicionários e *args e **kargs
 
-comidas_tipicas_br_01 = {                                               # Criando dict 01
+comidas_tipicas_br_01 = {                                                 # Criando dict 01
     'Amazonas:':'Matrinxã',
     'Bahia:':'Acarajé',
     'São paulo:':'Virado a paulista',
 }
 
-comidas_tipicas_br_02 = {                                               # Criando dict 02
+comidas_tipicas_br_02 = {                                                 # Criando dict 02
     'Rio de Janeiro:':'Camarão com Chuchu',
     'Minas Gerais:':'Tutu a Mineira',
     'Pernambuco:':'Buchada de Bode',
 }
 
-comidas_br = {**comidas_tipicas_br_01, **comidas_tipicas_br_02}         # Unindo dict 01 e 02
+comidas_br = {**comidas_tipicas_br_01, **comidas_tipicas_br_02}           # Unindo dict 01 e 02
 
 
 

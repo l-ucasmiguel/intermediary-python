@@ -1,5 +1,5 @@
 # Praticando aula 81, 82
-# função lambda
+# Funções lambdas
 
 lista_guerreiros = [                                                               # LISTA DE DICIONÁRIOS
     {'nome':'vegeta','poder':'galick ho'},
