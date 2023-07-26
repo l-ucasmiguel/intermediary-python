@@ -28,54 +28,40 @@ print('\n')
 
 
 
+# Mapeamento e Filtragem de dados em List Comprehension
+import pprint                                                                # O módulo 'pprint' é usado para imprimir estruturas de dados de forma mais legível e organizada.
 
-# 02) Mapeamento de dados em list comprehension
-print('2) Mapeamento de dados em List Comprehension: ')
-print()
+def p(v):
+    pprint.pprint(v, sort_dicts=False, width=80)
 
 
-# O Mapeamento de dados é feito usando a sintaxe da list comprehension para transformar cada elemento de uma lista original de acordo com uma expressão fornecida.
-produtos = [
+print('2) Mapeamento e Filtragem de dados em List Comprehension: \n')
+print('Lista original:')
+lista_de_produtos = [                                                        # Lista de Dicts
     {'nome':'p1','preço':20},
     {'nome':'p2','preço':10},
     {'nome':'p3','preço':30},
 ]
 
-# Mapeamento em list comprehension é ter uma lista, e querer gerar uma nova lista talvez transformando os dados mas tendo que manter o mesmo tamanho das listas
-novos_produtos = [                                                          # list comprehension
-    # {'nome':produto['nome'],'preço':produto['preço']}                     # Mapeamento
-    {**produto, 'preço': produto['preço'] * 1.05}                           # Usando '**' para desempacotar | Aumentando o preço dos produtos em 5%
-    if produto['preço'] >20 else {**produto}                                # Só aumenta o preço do que for > 20
-    for produto in produtos
-    if (produto['preço'] >= 20 and produto['preço'] *1.05) > 10             # Filtro
+print(*lista_de_produtos, sep='\n')
+print()
+
+
+
+
+print('Lista alterada com aumento em 5%: ')
+nova_lista_de_produtos = [
+    {**produto, 'aumento 5%': produto['preço'] *1.05}     # Entre {} pq é um novo dict || Usando '**' para desempacotar o dict antigo em um novo || Criando nova chave para 'aumento 5%'
+    if produto['preço'] >= 20 else {**produto}            # Se produto['preço'] >= 20 exibir 'aumento 5%', se não retornar o dict original
+    for produto in lista_de_produtos
+    if (produto['preço'] >= 20 and produto['preço'] * 1.05 > 10)   # Se produto['preço'] >= 20 & produto['preço'] * 1.05 > 10 EXIBIR FILTRADO
 ]
 
-"""
-Filtro, filtrar coisas que eu não quero na minha lista, isto vem depois do 'for', o que for filtro é só 'if' não tem 'else' 
-O que vem a esquerda do 'for' é mapeamento, o que vem a direita do 'for' é filtro
-"""
+# If antes do 'for' : antes é de mapeamento, map sempre vai retornar a mesma quantidade de elementos
+# If depois do 'for': depois é de filtro, o de filtrar coisas que eu não quero na minha lista,
 
-
-# print(novos_produtos)
-print(*novos_produtos, sep='\n')                                          # Usando '*' para desempacotar e 'sep='\n'' para quebra de linha
-# print(novos_produtos)
-
-print('-'*100)
-# Filtro
-lista = [n for n in range(10) if n < 5]                                   # 'if' do filtro sempre depois do 'for'
-print(lista)
+# print(*nova_lista_de_produtos, sep='\n')
+p(nova_lista_de_produtos)
 
 
 
-
-
-
-
-
-
-
-
-# import pprint                                                             # O módulo 'pprint' é usado para imprimir estruturas de dados de forma mais legível e organizada.
-
-# def p(v):
-#     pprint.pprint(v, sort_dicts=False, width=40)

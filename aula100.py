@@ -16,8 +16,8 @@
 
 # 1- FUNÇÃO LAMBDA                                          CHECK
 # 2- PACKAGES                                               CHECK
-# 3- LIST COMPREHENSION
-# 4- ROUND()
+# 3- LIST COMPREHENSION                                     CHECK
+# 4- ROUND()                                                
 
 
 import copy                                                                               # Importando módulo copy 
