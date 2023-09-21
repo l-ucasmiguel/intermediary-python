@@ -4,10 +4,10 @@
 
 
 
-# Está função verifica se o valor passado como argumento 'div' é igual a zero, Se for igual a zero a função gera uma Exceção 'ZeroDivisionError'
+# Está função verifica se o valor passado como argumento 'dividir' é igual a zero, Se for igual a zero a função gera uma Exceção 'ZeroDivisionError' personalizada que criamos
 # Caso contrário a função retorna true
-def nao_aceito_zero(div):
-    if div == 0:
+def nao_aceito_zero(dividir):
+    if dividir  == 0:
         raise ZeroDivisionError('Você está tentando dividir por zero.')
     return True
 
@@ -25,14 +25,16 @@ def deve_ser_int_ou_float(num):
     return True
 
 
-# Está função é responsável por executar a divisão de 'num' por 'div'. Antes de realizar a divisão ela chama as funções 'deve_ser_int_ou_float(num)' e 'deve_ser_int_ou_float(div)'
+# Está função é responsável por executar a divisão de 'num' por 'div'. Antes de realizar a divisão ela chama as funções 'deve_ser_int_ou_float(num)' e 'deve_ser_int_ou_float(dividir)'
 # Para garantir que os argumentos sejam do tipo corretos. Em seguida ela chama a função 'não_aceito_zero(div)' para verificar se 'div' é diferente de zero. Se todas as verificações
 # Passarem a função retorna o resultado da divisão entre 'num' e 'div'. 
-def divide(num, div):
+def divide(num, dividir):
     deve_ser_int_ou_float(num)
-    deve_ser_int_ou_float(div)
-    nao_aceito_zero(div)
-    return num / div 
+    deve_ser_int_ou_float(dividir)
+    nao_aceito_zero(dividir)
+    return num / dividir 
 
 
-print(divide(8,'0'))
+# print(nao_aceito_zero(0))
+# print(deve_ser_int_ou_float('0'))
+print(divide(20,'4'))

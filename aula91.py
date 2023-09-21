@@ -39,6 +39,6 @@ def generator (n=0, maximum=10):                    # Criando uma Generator Func
 
 
 
-gen = generator(maximum=1000000)                    # Criando a variável 'gen' que recebe a função 'generator' e passa o 'maximum=1000000' como argumento
+gen = generator(n=2, maximum=12)                    # Criando a variável 'gen' que recebe a função 'generator' e passa o 'maximum=1000000' como argumento
 for n in gen:                                       # Chamando a função com 'for', ela sempre pausa no yield e retorna de lá 
     print(n)

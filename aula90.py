@@ -14,10 +14,11 @@ iterator = iter(iterable)                                      # tem __iter__ e 
 
 
 # Generator expression, são funções que sabem pausar. Todo generator é um iterator, mas um iterator não é um generator
+
 import sys                                                     # Importando módulo 'sys'
 
-lista = [n for n in range(1000000)]                            # Criando uma list comprehension
-generator = (n for n in range(1000000))                        # Criando uma Generator expression, é igual uma list comprehension, mas com '()'
+lista = [n for n in range(10000)]                            # Criando uma list comprehension
+generator = (n for n in range(10000))                        # Criando uma Generator expression, é igual uma list comprehension, mas com '()'
 
 print(sys.getsizeof(lista))                                    # sys.getsizeof() mostra o tamanho em bytes na memória
 print(sys.getsizeof(generator))
@@ -25,7 +26,7 @@ print()
 """
 O generator expression não salva todos os valores na memória, ele te entrega um valor por vez.
 
-A list confome aumenta a quantidade de elementos, ela vai salvar cada vez mais na memória, porque salva tudo na memória. E como esta na memória, na list é possível
+A list conforme aumenta a quantidade de elementos, ela vai salvar cada vez mais na memória, porque salva tudo na memória. E como esta na memória, na list é possível
 acessar os elementos pelo índice, o que não da pra fazer com generator expression."""
 
 # O generator expression fica parado no primeiro valor até que se chame o próximo. ex: 

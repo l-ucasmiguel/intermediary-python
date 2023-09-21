@@ -11,7 +11,7 @@
 
 try:
     a = 18
-    b = 0                                                                   #´ Esta linha comentada vai fazer ser acionado o 'Except NameError'
+    b = 0                                                                   # Esta linha comentada vai fazer ser acionado o 'Except NameError'
     # print(b[0])                                                           # Esta linha vai fazer ser acionado o 'Except TypeError'
     print('Linha 01'[1000])                                                 # Essa linha vai fazer ser acionado o 'Except IndexError'
     c = a / b                                                               # Esta linha vai fazer ser acionado o 'Except ZeroDivisionError'

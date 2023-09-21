@@ -6,9 +6,9 @@ metodo = 'upper'
 
 # print(dir(string))
 
-if hasattr(string, metodo):
-    print('Existe upper')
-    print(getattr(string, metodo)())
+if hasattr(string, metodo):                                                 # Se 'string' tiver o método 'upper'
+    print('Existe upper')                                                   # imprima
+    print(getattr(string, metodo)())                                        
     # print(string.upper())
 else:
     print('Não existe o método', metodo)

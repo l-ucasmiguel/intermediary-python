@@ -1,3 +1,3 @@
-print(123)
+print('PRINT do módulo externo',[123])
 
-variavel = 'Jorge'
+variavel = 'VAR do módulo externo'

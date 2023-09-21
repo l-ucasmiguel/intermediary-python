@@ -1,14 +1,14 @@
 # Este arquivo é executado assim que o módulo é importado
 
-# print (
-#     'Você importou o ', __name__
-# )
+print (
+    'Você importou o ', __name__,'\n'
+)
 
 
-# def dobra(x):
-#     return x*2
+def dobra(x):
+    return x*2
 
-# Este é um dos poucos casos que é recomendado usar o 'import *' 
+# Este é um dos poucos casos que é recomendado usar o 'import *', para importar tudo dos seguintes módulos
 from aula99_package.modulo import * 
 from aula99_package.modulo_2 import * 
 

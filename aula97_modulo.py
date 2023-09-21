@@ -1,6 +1,6 @@
-print('Este módulo se chama ', __name__)
+print('2) Este módulo se chama ', __name__,'[importado completo]\n')
 
-variavel_modulo = ' TESTE '
+variavel_modulo = 'VARIÁVEL DO MÓDULO EXTERNO'
 
 
 def soma(x,y):

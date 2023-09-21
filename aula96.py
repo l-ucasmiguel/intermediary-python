@@ -1,4 +1,4 @@
-# Módulo padrão do Python ('import', 'from', 'as', '*')
+# Módulo padrão do Python ('import', 'from', 'as', 'sys','*')
 # https://docs.python.org/3/py-modindex.html
 # É muito comum ouvir por ai que o python já vem com as pilhas incluídas, porque ele vem com muitos módulos por padrão.
 
@@ -7,6 +7,7 @@
 # Inteiro       - Para importar um módulo inteiro basta usar: import nome_modulo
 # Vantagens     - Você tem o namespace do módulo 
 # Desvantagens  - Nomes grandes
+# Cuidado para o nome da variável criada não ser uma palavra reservada do módulo, como no exemplo abaixo 'plataform'
 
 import sys                                                            # Importando o módulo inteiro
 
@@ -26,8 +27,8 @@ print()
 from sys import exit, platform                                        # Importando em partes o módulo 'sys', somente a parte do 'exit' e 'platform'
 
 platform = 'TESTE'                                                    # Em partes não temos o namespace do módulo protegendo o objeto, neste caso temos que tomar cuidado para 
-print(platform)                                                       # Não redefinir o valor dele, como neste caso.
-print()
+print(platform)                                                       # Não redefinir o valor dele, como neste caso, que criamos a variável 'platform' e por isso não
+print()                                                               # Podemos acessar o 'platform' do módulo
 
 
 
