@@ -24,8 +24,5 @@ print(soma_com_cinco(10),'\n')                               # Chamar o 'soma_co
                                                              # Ela continua e chama a função 'funcao_interna' passando como parâmetro '10' para 'y'
 
 
-multiplica_por_dez = criar_funcao(multiplica,10)            # Mesmo processo
+multiplica_por_dez = criar_funcao(multiplica,10)             # Mesmo processo
 print(multiplica_por_dez(50))
-
-
-
