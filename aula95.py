@@ -32,9 +32,9 @@ def divide(num, dividir):
     deve_ser_int_ou_float(num)
     deve_ser_int_ou_float(dividir)
     nao_aceito_zero(dividir)
-    return num / dividir 
+    return num / dividir
 
 
 # print(nao_aceito_zero(0))
 # print(deve_ser_int_ou_float('0'))
-print(divide(20,'4'))
+print(divide(200,'4'))
