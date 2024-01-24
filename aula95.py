@@ -37,4 +37,4 @@ def divide(num, dividir):
 
 # print(nao_aceito_zero(0))
 # print(deve_ser_int_ou_float('0'))
-print(divide(340,'4'))
+print(divide(550,'4'))
