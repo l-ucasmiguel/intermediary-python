@@ -1,4 +1,5 @@
 # Entendendo os seus próprios módulos Python:
+
 # O primeiro módulo executado chama-se __main__, os outros módulos tem os nomes deles
 # Você pode importar outro módulo inteiro ou parte do módulo, também podemos importar nossos próprios módulos
 # O Python conhece a pasta onde o __main__ está e as pastas abaixo dele
@@ -8,10 +9,9 @@
 
 
 import sys
-
 # print(*sys.path, sep='\n')
-# Está linha vai mostrar todos os diretórios do caminho de busca do módulo (sys.path), isso é útil para ver quais diretórios estão incluídos no caminho de busca de módulos, o que 
-# é importante para a importação de módulos em seus programas
+# Está linha vai mostrar todos os diretórios do caminho de busca do módulo (sys.path), isso é útil para ver quais diretórios 
+# estão incluídos no caminho de busca de módulos, o que é importante para a importação de módulos em seus programas
 
 
 print('1) Este módulo se chama ', __name__,' [ATUAL]\n')        # 1) Executando no módulo atual
@@ -22,8 +22,8 @@ import aula97_modulo                                            # 2) Importando 
 
 from aula97_modulo import variavel_modulo, soma                 # 3) Importando apenas uma variável do módulo e uma função
 print('3)',variavel_modulo)
-print('O resultado da soma é:',soma(2,2),'\n')
+print('   O resultado da soma é:',soma(2,2),'\n')               # 3) Chamando a função do módulo externo
 
 
 print('4)', aula97_modulo.variavel_modulo)                      # 4) Para usar variável de outro módulo basta colocar o nome do módulo o '.' e o nome da variável
-print('O resultado da soma é:',aula97_modulo.soma(8,8))
+print('   O resultado da soma é:',aula97_modulo.soma(8,8))      # 4) A mesma coisa funciona para usar uma função de outro módulo
