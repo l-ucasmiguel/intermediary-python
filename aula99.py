@@ -15,21 +15,18 @@
 
 from aula99_package.modulo import soma_do_modulo
 print('1)',soma_do_modulo(10,10))                                # Forma mais prática, porque é só usar o nome da função
-
 print()
-
 
 
 
 
 # 2º FORMA.     Importando package e o módulo completo.
-# Nessa forma de importação, o módulo completo 'aula99_package.modulo' é importado. Para acessar qualquer símbolo do módulo, você precisa usar o nome completo, como
-# 'aula99_package.modulo.soma_do_modulo'. Isso evita a poluição do namespace atual, pois todos os símbolos do módulo são acessíveis apenas usando o prefixo 'aula99_package.modulo'.
+# Nessa forma de importação, o módulo completo 'aula99_package.modulo' é importado. Para acessar qualquer símbolo do módulo, você precisa usar o nome
+# completo, como 'aula99_package.modulo.soma_do_modulo'. Isso evita a poluição do namespace atual, pois todos os símbolos do módulo são acessíveis
+# apenas usando o prefixo 'aula99_package.modulo'.
 import aula99_package.modulo
 print('2)',aula99_package.modulo.soma_do_modulo(20,20))          # Forma mais difícil. Nome fica muito grande, porque tem que usar o namespace 
-
 print()
-
 
 
 
@@ -39,9 +36,7 @@ print()
 # você pode usar 'modulo.soma_do_modulo' para acessar a função 'soma_do_modulo'. Isso permite um código mais conciso e legível em comparação com a opção 2.
 from aula99_package import modulo
 print('3)',modulo.soma_do_modulo(30,30))                         # Dessa forma tem que colocar o nome do módulo primeiro
-
 print()
-
 
 
 
@@ -57,13 +52,9 @@ print(variavel,' | ',nova_variavel,'\n')
 
 
 
-
 # EXTRA INIT,    O package pode ser inicializado por um arquivo chamado '__init__.py', que "engana" o python e faz o package se comportar como um módulo
 import aula99_package
 print('5)',aula99_package.dobra(50))
-
-
-
 
 
 

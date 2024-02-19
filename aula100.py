@@ -5,10 +5,14 @@
 # Ordene os preços em ordem crescente, gerando produtos_ordenados_por_preco por deep copy.
 
 
+import copy                                                     # Importando módulo copy
+from aula100_dados import produtos                              # Importando a lista 'produtos' do módulo 'produtos_modulo'
 
 
-import copy                                                                                             # Importando módulo copy
-from aula100_dados import produtos                                                                      # Importando a lista 'produtos' do módulo 'produtos_modulo'
+print('1) LISTA ORIGINAL: ')                                    # Exibe a lista original 
+print(*produtos, sep='\n')                                      # '*' está sendo usado para desempacotar a lista orignal
+print()
+
 
 
 
@@ -19,12 +23,6 @@ novos_produtos = [                                              # 'p' está entr
                                                                 # O que está antes do 'for' é pra executar a cada iteração
                                                                 # round é usado para arredondar valores float
                                                                 # '**' desempacota dicts, e '*' desempacota listas
-
-
-
-print('1) LISTA ORIGINAL: ')                                    # Exibe a lista original 
-print(*produtos, sep='\n')                                      # '*' está sendo usado para desempacotar a lista orignal
-print()
 
 
 
